@@ -1,0 +1,112 @@
+{
+  "name": "masloweditor972",
+  "displayName": "MaslowEditor",
+  "description": "This humble tool is very useful for any JS/TS ninja out here, cutting horrendous spaghetti code into pieces ;-)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:masloweditor972.helloWorld",
+    "onCommand:masloweditor972.addString",
+    "onCommand:masloweditor972.moveRefugees",
+    "onCommand:masloweditor972.moveCodeToFile",
+    "onCommand:masloweditor972.findJohnDoe"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "masloweditor972.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "masloweditor972.addString",
+        "title": "Add Intl String"
+      },
+      {
+        "command": "masloweditor972.moveRefugees",
+        "title": "Move Refugees"
+      },
+      {
+        "command": "masloweditor972.moveCodeToFile",
+        "title": "Move highlighted code to a specific file"
+      },
+      {
+        "command": "masloweditor972.findJohnDoe",
+        "title": "Find highlighted relative imports if John Doe"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "masloweditor972.helloWorld",
+        "key": "ctrl+alt+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "masloweditor972.addString",
+        "key": "ctrl+shift+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+shift+m",
+        "command": "masloweditor972.moveRefugees",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+shift+f",
+        "command": "masloweditor972.moveCodeToFile",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+shift+j",
+        "command": "masloweditor972.findJohnDoe",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.6.4",
+    "@types/babel__traverse": "^7.18.3",
+    "@types/escodegen": "^0.0.7",
+    "@types/esprima": "^4.0.3",
+    "@types/estraverse": "^5.1.2",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/prettier": "^2.7.2",
+    "@types/vscode": "^1.78.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "@vscode/test-electron": "^2.3.0",
+    "esbuild": "^0.17.18",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.21.4",
+    "@babel/parser": "^7.21.4",
+    "@babel/traverse": "^7.21.4",
+    "@types/fs-extra": "^11.0.1",
+    "escodegen": "^2.0.0",
+    "esprima": "^4.0.1",
+    "estraverse": "^5.3.0",
+    "fs-extra": "^11.1.1",
+    "install": "^0.13.0",
+    "npm": "^9.6.5",
+    "prettier": "^2.8.7"
+  }
+}

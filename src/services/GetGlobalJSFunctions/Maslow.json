@@ -1,0 +1,72 @@
+{
+  "gptOutput": "\n\n// PLOP_CODE_START\n// Import the esprima library \nimport * as esprima from 'esprima';\n\nfunction GetGlobalJSFunctions(filePath: string): string[] {\n  // Return an array of strings, each string is the full \n  // source code of the source code of a single global \n  // javascript function found in the source code of filePath.\n  // If no global function is found, or if error, \n  // return empty array.\n\n  let globalFunctions: string[] = []; // to store the array of global functions\n\n  try {\n    // Parse the javascript source code\n    const parsedCode = esprima.parse(filePath);\n\n    // Loop though all the function declaration entries\n    parsedCode.body.forEach(item => {\n      if (item.type == \"FunctionDeclaration\") {\n        // if the function has a global scope, add it to the array\n        if (item.type === \"global\") {\n          globalFunctions.push(item.source);\n        }\n      }\n    });\n  } catch(error) {\n    // Return an empty array, an error occurred\n    return [];\n  }\n\n  // Return the list of global functions\n  return globalFunctions;\n}\n\n// PLOP_CODE_END\n\n// PLOP_CODE_USE_START\n// Use example for the GetGlobalJSFunctions function\nconst GetGlobalJSFunctionsValue = GetGlobalJSFunctions(\"c/files/example.js\"); \n// PLOP_CODE_USE_END \n\n// PLOP_CODE_USE_RETURN_START\nreturn GetGlobalJSFunctionsValue;\n// PLOP_CODE_USE_RETURN_END\n\n// PLOP_CODE_EXTENSION_START\ntypescript\n// PLOP_CODE_EXTENSION_END \n\n// PLOP_CODE_EXPORT_START\nexport { GetGlobalJSFunctions }; \n// PLOP_CODE_EXPORT_END \n\n// PLOP_CODE_IMPORT_START\nimport { GetGlobalJSFunctions } from \"src/services/GetGlobalJSFunctions/GetGlobalJSFunctions\";\n// PLOP_CODE_IMPORT_END\n\n// PLOP_CODE_IMPORT_RELATIVE_START\nimport { GetGlobalJSFunctions } from \"../../src/services/GetGlobalJSFunctions/GetGlobalJSFunctions\";\n// PLOP_CODE_IMPORT_RELATIVE_END\n\n// PLOP_COMMAND_LINE_INSTALL_START\nyarn add esprima\n// PLOP_COMMAND_LINE_INSTALL_END\n\n// PLOP_INSPIRING_MESSAGE_START\n\"Action is the foundational key to all success\" - Pablo Picasso\n// PLOP_INSPIRING_MESSAGE_END",
+  "mainCode": [
+    "// Import the esprima library \nimport * as esprima from 'esprima';\n\nfunction GetGlobalJSFunctions(filePath: string): string[] {\n  // Return an array of strings, each string is the full \n  // source code of the source code of a single global \n  // javascript function found in the source code of filePath.\n  // If no global function is found, or if error, \n  // return empty array.\n\n  let globalFunctions: string[] = []; // to store the array of global functions\n\n  try {\n    // Parse the javascript source code\n    const parsedCode = esprima.parse(filePath);\n\n    // Loop though all the function declaration entries\n    parsedCode.body.forEach(item => {\n      if (item.type == \"FunctionDeclaration\") {\n        // if the function has a global scope, add it to the array\n        if (item.type === \"global\") {\n          globalFunctions.push(item.source);\n        }\n      }\n    });\n  } catch(error) {\n    // Return an empty array, an error occurred\n    return [];\n  }\n\n  // Return the list of global functions\n  return globalFunctions;\n}"
+  ],
+  "codeUsage": [
+    "// Use example for the GetGlobalJSFunctions function\nconst GetGlobalJSFunctionsValue = GetGlobalJSFunctions(\"c/files/example.js\");"
+  ],
+  "codeExtension": [
+    "typescript"
+  ],
+  "inspiringMessage": [
+    "\"Action is the foundational key to all success\" - Pablo Picasso"
+  ],
+  "codeImport": [
+    "import { GetGlobalJSFunctions } from \"src/services/GetGlobalJSFunctions/GetGlobalJSFunctions\";"
+  ],
+  "codeExport": [
+    "export { GetGlobalJSFunctions };"
+  ],
+  "codeImportRelative": [
+    "import { GetGlobalJSFunctions } from \"../../src/services/GetGlobalJSFunctions/GetGlobalJSFunctions\";"
+  ],
+  "codeUsageReturn": [
+    "return GetGlobalJSFunctionsValue;"
+  ],
+  "codeInstall": [
+    "yarn add esprima"
+  ],
+  "what_we_wanna_do": "In a given programming language, create a function (with the help of Chat GPT, the magic A.I).",
+  "name": "GetGlobalJSFunctions",
+  "affine_subfolder": "src/services",
+  "ask_for_subfolder": "src/services",
+  "affine_string_repo": "src",
+  "string_repo_folder_path": "pieces/AppStrings",
+  "string_repo_file_path": "AppStrings.js",
+  "string_name": "x2hwbuKC",
+  "string_fr": "leaveOnValid: true,",
+  "string_eng": "Hello friend",
+  "affine_file_where_we_use_string": "src",
+  "ask_for_js_file_string": "Je veux rien, capiche amigo ?",
+  "affine_file_where_we_use": "src/services",
+  "row_name": "age",
+  "question_type": "A question whose answer is a number.",
+  "question_name": "GetTestAge",
+  "ask_for_js_file": "Je veux rien, capiche amigo ?",
+  "get_ai_service_language": "Typescript",
+  "affine_questionnaire": "src/pages/TestPage",
+  "questionnaire_folder_path": "src/pages/TestPage/pieces/AddItemToTestPage/TestPageCreationList",
+  "questionnaire_file_name": "TestPageCreationList.js",
+  "repo_name": "AppStrings",
+  "description_string_name": "xWu6Gy7t",
+  "description_string_fr": "T'as quel age ?",
+  "description_string_eng": "How old are you?",
+  "error_string_name": "x5ypM04O",
+  "error_string_fr": "Oups... Cette valeur n'est pas valide.",
+  "error_string_eng": "Oops... This value is not valid.",
+  "question_page_name": "TestPage",
+  "question_default_answer": "currentItem?.age",
+  "question_default_textinput": "currentItem?.age",
+  "question_on_textinput_changed": "",
+  "question_validity_condition": "input != null && input > 0",
+  "question_DB_save_path": "src\\pages\\TestPage\\pieces\\AddItemToTestPage\\AddItemToDB.js",
+  "question_DB_edit_path": "src\\pages\\TestPage\\pieces\\EditItemInTestPage\\EditItemInTestPageDB.js",
+  "databaseinfo_path": "src\\reduxState\\TestPage\\DatabaseInfo.js",
+  "row_type": "INTEGER",
+  "row_default_value": "",
+  "get_ai_service_args": "filePath (string, the path of the file where the functions are)",
+  "get_ai_service_description": "Returns a list of strings, the list of global JS/TS functions found in the source code of filePath",
+  "get_ai_service_return_value": "In the previous code you just generated, fix those 2 things:source = the source code of filePath\r\n\r\nlatestFuncIndex = 0\r\n\r\nfound = true\r\n\r\nbasket = []\r\n\r\nas long as found is true, do the following:\r\n\r\nlatestFuncIndex = the first index of any of the following strings, \r\ninside source, starting at index latestFuncIndex:\r\n\r\n'\\n(optional export statement) (optional async statement) function (valid function name)(' (with a regex)\r\n'\\n(optional export statement) (const or var or let) (valid function name) = (optional async statement) (' (with another separate regex)\r\n\r\nif latestFuncIndex is found, do the following:\r\n\r\nlatestFuncEndIndex = the first index of '\\n}', in source, starting from latestFuncIndex.\r\n\r\nif latestFuncEndIndex > latestFuncIndex, then latestFuncEndIndex += 3,\r\nthen add to basket the substring starting at latestFuncIndex, and ending at latestFuncEndIndex + 3,\r\nthen latestFuncIndex = latestFuncEndIndex, then keep moving.\r\n\r\n\r\nif latestFuncIndex is not found, then found = false.\r\n\r\nOnce all that is done, return basket. If an error takes places, return basket.\r\n\r\nIn the latest generated code you made, you forgot about one of the regexes. fix this\r\n\r\n",
+  "gold_caviar": null
+}

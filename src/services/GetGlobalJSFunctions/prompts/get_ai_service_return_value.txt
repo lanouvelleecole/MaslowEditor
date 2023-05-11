@@ -1,0 +1,31 @@
+In the previous code you just generated, fix those 2 things:source = the source code of filePath
+
+latestFuncIndex = 0
+
+found = true
+
+basket = []
+
+as long as found is true, do the following:
+
+latestFuncIndex = the first index of any of the following strings, 
+inside source, starting at index latestFuncIndex:
+
+'\n(optional export statement) (optional async statement) function (valid function name)(' (with a regex)
+'\n(optional export statement) (const or var or let) (valid function name) = (optional async statement) (' (with another separate regex)
+
+if latestFuncIndex is found, do the following:
+
+latestFuncEndIndex = the first index of '\n}', in source, starting from latestFuncIndex.
+
+if latestFuncEndIndex > latestFuncIndex, then latestFuncEndIndex += 3,
+then add to basket the substring starting at latestFuncIndex, and ending at latestFuncEndIndex + 3,
+then latestFuncIndex = latestFuncEndIndex, then keep moving.
+
+
+if latestFuncIndex is not found, then found = false.
+
+Once all that is done, return basket. If an error takes places, return basket.
+
+In the latest generated code you made, you forgot about one of the regexes. fix this
+
