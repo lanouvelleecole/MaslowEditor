@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.78.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lanouvelleecole/MaslowEditor"
+  },
   "categories": [
     "Other"
   ],
@@ -74,7 +78,10 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "first-push": "npm run git-init && git add . && git commit -m \"first commit\" && git branch -M main && git remote add origin <YOUR_GITHUB_URL> && git push -u origin main",
+    "git-init": "rimraf .git && git init",
+    "push": "(git add . && git commit -m \"I'm a bigger pusher than Ice-T homie !!!\" && git push) || exit 0"
   },
   "devDependencies": {
     "@types/babel__generator": "^7.6.4",

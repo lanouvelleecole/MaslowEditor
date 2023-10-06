@@ -40,3 +40,16 @@ then the keybinding commands are not found.
 Maybe my StackOverflow brotherhood will help me figure this out, who knows....
 
 In the meantime, I save this piece of work here, and I'll moe the 4 keybindings to the MaslowGPT side of things.
+
+## To build and install the package
+
+Install vsce:
+
+Make sure you have Node.js installed. Then run:
+
+    npm install -g vsce
+
+Run these commands to install the extension in your VSCODE editor
+
+    vsce package  
+    code --install-extension <vsix_file_name>.vsix

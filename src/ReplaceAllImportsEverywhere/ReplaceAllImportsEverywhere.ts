@@ -1,4 +1,3 @@
-import { zz } from "../TestFunc/TestFunc";
 import * as fs from "fs";
 import * as path from "path";
 import { getPathWithForwardSlashes } from "../GetPathWithForwardSlashes/getPathWithForwardSlashes";
