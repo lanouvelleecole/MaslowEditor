@@ -6,6 +6,12 @@ Please bear in mind that this is a work in progress, and tons of features will b
 
 ## The Keybindings (More will come soon, stay tuned soldiers !)
 
+### CTRL + SHIFT + I
+
+Allows you to add the currenly highlighted string 
+(MUST BE A STRING WITH IT'S QUOTES !!!!!)
+to the latest string repository specified during the last use of the ```npx maslow add-string``` command.
+
 ### CTRL + SHIFT + M
 
 Allows you to move the files specified by the highlighted imports.
